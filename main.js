@@ -24,3 +24,9 @@ nameSubmit.addEventListener('click', () => {
         nameMessage.style.color = 'var(--success)';
     }
 });
+
+        const charInput = document.getElementById('charInput');
+        const charCount = document.getElementById('charCount');
+        charInput.addEventListener('input', () => {
+            charCount.textContent = charInput.value.length;
+        });
