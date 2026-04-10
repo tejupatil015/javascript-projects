@@ -30,3 +30,11 @@ nameSubmit.addEventListener('click', () => {
         charInput.addEventListener('input', () => {
             charCount.textContent = charInput.value.length;
         });
+
+        const clickButton = document.getElementById('clickButton');
+        const clickDisplay = document.getElementById('clickDisplay');
+        let clicks = 0;
+        clickButton.addEventListener('click', () => {
+            clicks += 1;
+            clickDisplay.textContent = clicks;
+        });
