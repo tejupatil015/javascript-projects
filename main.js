@@ -68,3 +68,7 @@ prevImage.addEventListener('click', () => {
     currentImageIndex = (currentImageIndex - 1 + imageSources.length) % imageSources.length;
     updateImage();
 });
+nextImage.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex + 1) % imageSources.length;
+    updateImage();
+});
