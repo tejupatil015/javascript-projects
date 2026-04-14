@@ -25,16 +25,29 @@ nameSubmit.addEventListener('click', () => {
     }
 });
 
-        const charInput = document.getElementById('charInput');
-        const charCount = document.getElementById('charCount');
-        charInput.addEventListener('input', () => {
-            charCount.textContent = charInput.value.length;
-        });
+const charInput = document.getElementById('charInput');
+const charCount = document.getElementById('charCount');
+charInput.addEventListener('input', () => {
+    charCount.textContent = charInput.value.length;
+});
 
-        const clickButton = document.getElementById('clickButton');
-        const clickDisplay = document.getElementById('clickDisplay');
-        let clicks = 0;
-        clickButton.addEventListener('click', () => {
-            clicks += 1;
-            clickDisplay.textContent = clicks;
+const clickButton = document.getElementById('clickButton');
+const clickDisplay = document.getElementById('clickDisplay');
+let clicks = 0;
+clickButton.addEventListener('click', () => {
+    clicks += 1;
+    clickDisplay.textContent = clicks;
+});
+
+   const quotes = [
+            'The only way to do great work is to love what you do.',
+            'Innovation distinguishes between a leader and a follower.',
+            'Your time is limited, don\'t waste it living someone else\'s life.',
+            'Small steps every day lead to big changes.',
+            'Creativity is intelligence having fun.'
+        ];
+        const quoteText = document.getElementById('quoteText');
+        const quoteButton = document.getElementById('quoteButton');
+        quoteButton.addEventListener('click', () => {
+            quoteText.textContent = quotes[Math.floor(Math.random() * quotes.length)];
         });
