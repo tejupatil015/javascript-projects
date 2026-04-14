@@ -39,15 +39,32 @@ clickButton.addEventListener('click', () => {
     clickDisplay.textContent = clicks;
 });
 
-   const quotes = [
-            'The only way to do great work is to love what you do.',
-            'Innovation distinguishes between a leader and a follower.',
-            'Your time is limited, don\'t waste it living someone else\'s life.',
-            'Small steps every day lead to big changes.',
-            'Creativity is intelligence having fun.'
-        ];
-        const quoteText = document.getElementById('quoteText');
-        const quoteButton = document.getElementById('quoteButton');
-        quoteButton.addEventListener('click', () => {
-            quoteText.textContent = quotes[Math.floor(Math.random() * quotes.length)];
-        });
+const quotes = [
+    'The only way to do great work is to love what you do.',
+    'Innovation distinguishes between a leader and a follower.',
+    'Your time is limited, don\'t waste it living someone else\'s life.',
+    'Small steps every day lead to big changes.',
+    'Creativity is intelligence having fun.'
+];
+const quoteText = document.getElementById('quoteText');
+const quoteButton = document.getElementById('quoteButton');
+quoteButton.addEventListener('click', () => {
+    quoteText.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+});
+
+const sliderImage = document.getElementById('sliderImage');
+const prevImage = document.getElementById('prevImage');
+const nextImage = document.getElementById('nextImage');
+const imageSources = [
+    'imges/WhatsApp Image 2026-03-25 at 10.09.02 PM (1).jpeg',
+    'imges/IMG_20250805_175453.jpg',
+    'imges/WhatsApp Image 2026-03-25 at 10.09.02 PM (1).jpeg'
+];
+let currentImageIndex = 0;
+function updateImage() {
+    sliderImage.src = imageSources[currentImageIndex];
+}
+prevImage.addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex - 1 + imageSources.length) % imageSources.length;
+    updateImage();
+});
