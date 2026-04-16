@@ -89,3 +89,20 @@ nextImage.addEventListener('click', () => {
             });
             noResults.style.display = found ? 'none' : 'block';
         });
+
+        const runAsyncButton = document.getElementById('runAsync');
+        const asyncLog = document.getElementById('asyncLog');
+        function logAsync(message) {
+            const entry = document.createElement('p');
+            entry.textContent = message;
+            asyncLog.appendChild(entry);
+            asyncLog.scrollTop = asyncLog.scrollHeight;
+        }
+        function delayedTask(label, delay) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    logAsync(`✅ ${label} completed after ${delay / 1000}s.`);
+                    resolve(label);
+                }, delay);
+            });
+        }
