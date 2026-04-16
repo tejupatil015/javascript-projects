@@ -92,6 +92,47 @@
             </ul>
             <div id="noResults" class="status" style="display:none;">No results found.</div>
         </section>
+
+        
+        <section class="card wide">
+            <h2>Async Demo</h2>
+            <p>Simulate sequential tasks and promise handling with clear log output.</p>
+            <button id="runAsync">Run Async Demo</button>
+            <div id="asyncLog" class="log-box"><p>Ready to run the demo.</p></div>
+        </section>
+
+        <section class="card wide">
+            <h2>Contact Form</h2>
+            <p>Submit a contact entry and see it appear immediately in the table.</p>
+            <form id="contactForm" class="row split" autocomplete="off">
+                <input id="contactName" type="text" placeholder="Full name" required>
+                <input id="contactEmail" type="email" placeholder="Email address" required>
+                <input id="contactPhone" type="tel" placeholder="Phone number" required>
+                <button type="submit">Save Contact</button>
+            </form>
+            <div class="table-wrapper" style="margin-top:18px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contactTableBody">
+                        <tr>
+                            <td>1</td>
+                            <td>Tejashri Patil</td>
+                            <td>tejupatil15@gmail.com</td>
+                            <td>1234567890</td>
+                            <td><button class="action-button">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
         
         <script src="main.js"></script>
 </body>
