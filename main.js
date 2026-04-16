@@ -72,3 +72,20 @@ nextImage.addEventListener('click', () => {
     currentImageIndex = (currentImageIndex + 1) % imageSources.length;
     updateImage();
 });
+
+
+        
+        const searchInput = document.getElementById('searchInput');
+        const itemsList = document.getElementById('itemsList');
+        const noResults = document.getElementById('noResults');
+        searchInput.addEventListener('input', () => {
+            const term = searchInput.value.trim().toLowerCase();
+            const items = itemsList.querySelectorAll('li');
+            let found = false;
+            items.forEach(item => {
+                const visible = item.textContent.toLowerCase().includes(term);
+                item.style.display = visible ? 'flex' : 'none';
+                if (visible) found = true;
+            });
+            noResults.style.display = found ? 'none' : 'block';
+        });
