@@ -105,4 +105,25 @@ nextImage.addEventListener('click', () => {
                     resolve(label);
                 }, delay);
             });
+        } 
+        async function runAsyncDemo() {
+            asyncLog.innerHTML = '';
+            logAsync('Starting async demo...');
+            try {
+                await delayedTask('Task 1', 2000);
+                await delayedTask('Task 2', 1000);
+                logAsync('Checking login status...');
+                const loginStatus = false;
+                const response = await new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        if (loginStatus) resolve({ status: 200, message: 'Success' });
+                        else reject({ status: 400, message: 'Failed' });
+                    }, 700);
+                });
+                logAsync(`Login ${response.message} (${response.status}).`);
+            } catch (error) {
+                logAsync(`⚠️ ${error.message || 'Promise rejected'} (${error.status}).`);
+            }
+            logAsync('Async demo finished.');
         }
+        runAsyncButton.addEventListener('click', runAsyncDemo);
