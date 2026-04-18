@@ -127,3 +127,30 @@ nextImage.addEventListener('click', () => {
             logAsync('Async demo finished.');
         }
         runAsyncButton.addEventListener('click', runAsyncDemo);
+
+        
+        const contactForm = document.getElementById('contactForm');
+        const contactName = document.getElementById('contactName');
+        const contactEmail = document.getElementById('contactEmail');
+        const contactPhone = document.getElementById('contactPhone');
+        const contactTableBody = document.getElementById('contactTableBody');
+        let contactId = 2;
+        contactForm.addEventListener('submit', event => {
+            event.preventDefault();
+            const name = contactName.value.trim();
+            const email = contactEmail.value.trim();
+            const phone = contactPhone.value.trim();
+            if (!name || !email || !phone) return;
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${contactId}</td>
+                <td>${name}</td>
+                <td>${email}</td>
+                <td>${phone}</td>
+                <td><button class="action-button">Delete</button></td>
+            `;
+            row.querySelector('button').addEventListener('click', () => row.remove());
+            contactTableBody.appendChild(row);
+            contactId += 1;
+            contactForm.reset();
+        });
