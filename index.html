@@ -133,6 +133,24 @@
                 </table>
             </div>
         </section>
+
+                <section class="card">
+            <h2>Simple Calculator</h2>
+            <p>Perform quick arithmetic operations with instant results.</p>
+            <div class="row split">
+                <input id="calcA" type="number" placeholder="First number">
+                <input id="calcB" type="number" placeholder="Second number">
+            </div>
+            <div class="row">
+                <div class="grid-2">
+                    <button data-op="+">+</button>
+                    <button data-op="-">-</button>
+                    <button data-op="*">*</button>
+                    <button data-op="/">/</button>
+                </div>
+                <div class="status">Result: <strong id="calcResult">0</strong></div>
+            </div>
+        </section>
         
         <script src="main.js"></script>
 </body>
