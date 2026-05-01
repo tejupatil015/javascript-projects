@@ -256,3 +256,24 @@ textarea {
             line-height: 1.8;
             font-size: 1.08rem;
         }
+
+        ul.task-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 14px;
+        }
+
+        ul.task-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(148,163,184,0.16);
+            border-radius: 18px;
+            padding: 16px;
+            color: var(--text);
+            transition: background 0.25s ease;
+        }
