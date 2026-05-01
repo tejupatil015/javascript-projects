@@ -74,122 +74,122 @@ nextImage.addEventListener('click', () => {
 });
 
 
-        
-        const searchInput = document.getElementById('searchInput');
-        const itemsList = document.getElementById('itemsList');
-        const noResults = document.getElementById('noResults');
-        searchInput.addEventListener('input', () => {
-            const term = searchInput.value.trim().toLowerCase();
-            const items = itemsList.querySelectorAll('li');
-            let found = false;
-            items.forEach(item => {
-                const visible = item.textContent.toLowerCase().includes(term);
-                item.style.display = visible ? 'flex' : 'none';
-                if (visible) found = true;
-            });
-            noResults.style.display = found ? 'none' : 'block';
+
+const searchInput = document.getElementById('searchInput');
+const itemsList = document.getElementById('itemsList');
+const noResults = document.getElementById('noResults');
+searchInput.addEventListener('input', () => {
+    const term = searchInput.value.trim().toLowerCase();
+    const items = itemsList.querySelectorAll('li');
+    let found = false;
+    items.forEach(item => {
+        const visible = item.textContent.toLowerCase().includes(term);
+        item.style.display = visible ? 'flex' : 'none';
+        if (visible) found = true;
+    });
+    noResults.style.display = found ? 'none' : 'block';
+});
+
+const runAsyncButton = document.getElementById('runAsync');
+const asyncLog = document.getElementById('asyncLog');
+function logAsync(message) {
+    const entry = document.createElement('p');
+    entry.textContent = message;
+    asyncLog.appendChild(entry);
+    asyncLog.scrollTop = asyncLog.scrollHeight;
+}
+function delayedTask(label, delay) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            logAsync(`✅ ${label} completed after ${delay / 1000}s.`);
+            resolve(label);
+        }, delay);
+    });
+}
+async function runAsyncDemo() {
+    asyncLog.innerHTML = '';
+    logAsync('Starting async demo...');
+    try {
+        await delayedTask('Task 1', 2000);
+        await delayedTask('Task 2', 1000);
+        logAsync('Checking login status...');
+        const loginStatus = false;
+        const response = await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (loginStatus) resolve({ status: 200, message: 'Success' });
+                else reject({ status: 400, message: 'Failed' });
+            }, 700);
         });
+        logAsync(`Login ${response.message} (${response.status}).`);
+    } catch (error) {
+        logAsync(`⚠️ ${error.message || 'Promise rejected'} (${error.status}).`);
+    }
+    logAsync('Async demo finished.');
+}
+runAsyncButton.addEventListener('click', runAsyncDemo);
 
-        const runAsyncButton = document.getElementById('runAsync');
-        const asyncLog = document.getElementById('asyncLog');
-        function logAsync(message) {
-            const entry = document.createElement('p');
-            entry.textContent = message;
-            asyncLog.appendChild(entry);
-            asyncLog.scrollTop = asyncLog.scrollHeight;
-        }
-        function delayedTask(label, delay) {
-            return new Promise(resolve => {
-                setTimeout(() => {
-                    logAsync(`✅ ${label} completed after ${delay / 1000}s.`);
-                    resolve(label);
-                }, delay);
-            });
-        } 
-        async function runAsyncDemo() {
-            asyncLog.innerHTML = '';
-            logAsync('Starting async demo...');
-            try {
-                await delayedTask('Task 1', 2000);
-                await delayedTask('Task 2', 1000);
-                logAsync('Checking login status...');
-                const loginStatus = false;
-                const response = await new Promise((resolve, reject) => {
-                    setTimeout(() => {
-                        if (loginStatus) resolve({ status: 200, message: 'Success' });
-                        else reject({ status: 400, message: 'Failed' });
-                    }, 700);
-                });
-                logAsync(`Login ${response.message} (${response.status}).`);
-            } catch (error) {
-                logAsync(`⚠️ ${error.message || 'Promise rejected'} (${error.status}).`);
-            }
-            logAsync('Async demo finished.');
-        }
-        runAsyncButton.addEventListener('click', runAsyncDemo);
 
-        
-        const contactForm = document.getElementById('contactForm');
-        const contactName = document.getElementById('contactName');
-        const contactEmail = document.getElementById('contactEmail');
-        const contactPhone = document.getElementById('contactPhone');
-        const contactTableBody = document.getElementById('contactTableBody');
-        let contactId = 2;
-        contactForm.addEventListener('submit', event => {
-            event.preventDefault();
-            const name = contactName.value.trim();
-            const email = contactEmail.value.trim();
-            const phone = contactPhone.value.trim();
-            if (!name || !email || !phone) return;
-            const row = document.createElement('tr');
-            row.innerHTML = `
+const contactForm = document.getElementById('contactForm');
+const contactName = document.getElementById('contactName');
+const contactEmail = document.getElementById('contactEmail');
+const contactPhone = document.getElementById('contactPhone');
+const contactTableBody = document.getElementById('contactTableBody');
+let contactId = 2;
+contactForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const name = contactName.value.trim();
+    const email = contactEmail.value.trim();
+    const phone = contactPhone.value.trim();
+    if (!name || !email || !phone) return;
+    const row = document.createElement('tr');
+    row.innerHTML = `
                 <td>${contactId}</td>
                 <td>${name}</td>
                 <td>${email}</td>
                 <td>${phone}</td>
                 <td><button class="action-button">Delete</button></td>
             `;
-            row.querySelector('button').addEventListener('click', () => row.remove());
-            contactTableBody.appendChild(row);
-            contactId += 1;
-            contactForm.reset();
-        });
+    row.querySelector('button').addEventListener('click', () => row.remove());
+    contactTableBody.appendChild(row);
+    contactId += 1;
+    contactForm.reset();
+});
 
-         
-        const calcA = document.getElementById('calcA');
-        const calcB = document.getElementById('calcB');
-        const calcResult = document.getElementById('calcResult');
-        document.querySelectorAll('[data-op]').forEach(button => {
-            button.addEventListener('click', () => {
-                const a = Number(calcA.value);
-                const b = Number(calcB.value);
-                const op = button.dataset.op;
-                let result = 0;
-                if (op === '+') result = a + b;
-                if (op === '-') result = a - b;
-                if (op === '*') result = a * b;
-                if (op === '/') result = b !== 0 ? a / b : '∞';
-                calcResult.textContent = result;
-            });
-        });
-        
- const todoInput = document.getElementById('todoInput');
-        const todoAdd = document.getElementById('todoAdd');
-        const todoList = document.getElementById('todoList');
-        todoAdd.addEventListener('click', () => {
-            const value = todoInput.value.trim();
-            if (!value) return;
-            const item = document.createElement('li');
-            item.textContent = value;
-            item.addEventListener('click', () => item.classList.toggle('done'));
-            const removeButton = document.createElement('button');
-            removeButton.className = 'remove';
-            removeButton.textContent = 'Remove';
-            removeButton.addEventListener('click', event => {
-                event.stopPropagation();
-                item.remove();
-            });
-            item.appendChild(removeButton);
-            todoList.appendChild(item);
-            todoInput.value = '';
-        });
+
+const calcA = document.getElementById('calcA');
+const calcB = document.getElementById('calcB');
+const calcResult = document.getElementById('calcResult');
+document.querySelectorAll('[data-op]').forEach(button => {
+    button.addEventListener('click', () => {
+        const a = Number(calcA.value);
+        const b = Number(calcB.value);
+        const op = button.dataset.op;
+        let result = 0;
+        if (op === '+') result = a + b;
+        if (op === '-') result = a - b;
+        if (op === '*') result = a * b;
+        if (op === '/') result = b !== 0 ? a / b : '∞';
+        calcResult.textContent = result;
+    });
+});
+
+const todoInput = document.getElementById('todoInput');
+const todoAdd = document.getElementById('todoAdd');
+const todoList = document.getElementById('todoList');
+todoAdd.addEventListener('click', () => {
+    const value = todoInput.value.trim();
+    if (!value) return;
+    const item = document.createElement('li');
+    item.textContent = value;
+    item.addEventListener('click', () => item.classList.toggle('done'));
+    const removeButton = document.createElement('button');
+    removeButton.className = 'remove';
+    removeButton.textContent = 'Remove';
+    removeButton.addEventListener('click', event => {
+        event.stopPropagation();
+        item.remove();
+    });
+    item.appendChild(removeButton);
+    todoList.appendChild(item);
+    todoInput.value = '';
+});
