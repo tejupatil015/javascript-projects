@@ -172,3 +172,24 @@ nextImage.addEventListener('click', () => {
                 calcResult.textContent = result;
             });
         });
+        
+ const todoInput = document.getElementById('todoInput');
+        const todoAdd = document.getElementById('todoAdd');
+        const todoList = document.getElementById('todoList');
+        todoAdd.addEventListener('click', () => {
+            const value = todoInput.value.trim();
+            if (!value) return;
+            const item = document.createElement('li');
+            item.textContent = value;
+            item.addEventListener('click', () => item.classList.toggle('done'));
+            const removeButton = document.createElement('button');
+            removeButton.className = 'remove';
+            removeButton.textContent = 'Remove';
+            removeButton.addEventListener('click', event => {
+                event.stopPropagation();
+                item.remove();
+            });
+            item.appendChild(removeButton);
+            todoList.appendChild(item);
+            todoInput.value = '';
+        });
