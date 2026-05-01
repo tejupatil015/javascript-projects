@@ -190,90 +190,90 @@ textarea {
     resize: vertical;
 }
 
-        button {
-            border: none;
-            border-radius: 16px;
-            padding: 14px 20px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-            color: #0b1220;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
-        }
+button {
+    border: none;
+    border-radius: 16px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    color: #0b1220;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+}
 
-        button:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.08);
-            box-shadow: 0 18px 40px rgba(56,189,248,0.18);
-        }
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 0 18px 40px rgba(56, 189, 248, 0.18);
+}
 
-        .pill {
-            display: inline-flex;
-            gap: 0.5rem;
-            align-items: center;
-            padding: 0.75rem 1.1rem;
-            border-radius: 999px;
-            background: rgba(148,163,184,0.16);
-            color: var(--text);
-            font-size: 0.95rem;
-            width: fit-content;
-        }
+.pill {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.75rem 1.1rem;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.16);
+    color: var(--text);
+    font-size: 0.95rem;
+    width: fit-content;
+}
 
-        .status {
-            margin-top: 12px;
-            padding: 16px;
-            border-radius: 18px;
-            background: rgba(148,163,184,0.12);
-            color: var(--text);
-        }
+.status {
+    margin-top: 12px;
+    padding: 16px;
+    border-radius: 18px;
+    background: rgba(148, 163, 184, 0.12);
+    color: var(--text);
+}
 
-           .card .small {
-            font-size: 0.95rem;
-            color: var(--muted);
-        }
+.card .small {
+    font-size: 0.95rem;
+    color: var(--muted);
+}
 
-        .image-frame {
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 26px 60px rgba(15,23,42,0.2);
-        }
-        
-        .image-frame img {
-            width: 100%;
-            display: block;
-            object-fit: cover;
-            height: 320px;
-        }
+.image-frame {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 26px 60px rgba(15, 23, 42, 0.2);
+}
 
-        .quote {
-            min-height: 96px;
-            display: grid;
-            place-content: center;
-            padding: 24px 18px;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.05);
-            color: var(--text);
-            line-height: 1.8;
-            font-size: 1.08rem;
-        }
+.image-frame img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 320px;
+}
 
-        ul.task-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 14px;
-        }
+.quote {
+    min-height: 96px;
+    display: grid;
+    place-content: center;
+    padding: 24px 18px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 1.08rem;
+}
 
-        ul.task-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(148,163,184,0.16);
-            border-radius: 18px;
-            padding: 16px;
-            color: var(--text);
-            transition: background 0.25s ease;
-        }
+ul.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 14px;
+}
+
+ul.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 18px;
+    padding: 16px;
+    color: var(--text);
+    transition: background 0.25s ease;
+}
