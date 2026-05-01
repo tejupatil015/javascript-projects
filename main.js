@@ -154,3 +154,21 @@ nextImage.addEventListener('click', () => {
             contactId += 1;
             contactForm.reset();
         });
+
+         
+        const calcA = document.getElementById('calcA');
+        const calcB = document.getElementById('calcB');
+        const calcResult = document.getElementById('calcResult');
+        document.querySelectorAll('[data-op]').forEach(button => {
+            button.addEventListener('click', () => {
+                const a = Number(calcA.value);
+                const b = Number(calcB.value);
+                const op = button.dataset.op;
+                let result = 0;
+                if (op === '+') result = a + b;
+                if (op === '-') result = a - b;
+                if (op === '*') result = a * b;
+                if (op === '/') result = b !== 0 ? a / b : '∞';
+                calcResult.textContent = result;
+            });
+        });
