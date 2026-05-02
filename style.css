@@ -323,4 +323,9 @@ ul.task-list button.remove {
         }
 
        
-        
+         th, td {
+            padding: 16px 18px;
+            color: var(--text);
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(148,163,184,0.14);
+        }
