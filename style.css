@@ -277,3 +277,18 @@ ul.task-list li {
     color: var(--text);
     transition: background 0.25s ease;
 }
+
+        ul.task-list li.done {
+            opacity: 0.72;
+            text-decoration: line-through;
+        }
+
+        ul.task-list button.remove {
+            background: rgba(251,113,133,0.18);
+            color: #f8fafc;
+            width: auto;
+            padding: 10px 14px;
+        }
+
+      
+        
