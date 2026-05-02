@@ -304,3 +304,13 @@ ul.task-list button.remove {
     line-height: 1.7;
     color: var(--text);
 }
+.log-box p {
+            margin: 0 0 0.8rem;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+ 
+        
