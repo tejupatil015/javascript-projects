@@ -359,3 +359,16 @@ tr:last-child td {
     transition: background 0.25s ease;
 }
 
+ .action-button:hover {
+            background: rgba(59,130,246,0.3);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 28px 24px 40px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+
+        
