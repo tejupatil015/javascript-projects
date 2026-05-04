@@ -345,5 +345,17 @@ td {
             border-bottom: none;
         }
 
-    
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border-radius: 14px;
+            border: 1px solid transparent;
+            background: rgba(59,130,246,0.18);
+            color: var(--text);
+            font-size: 0.92rem;
+            cursor: pointer;
+            transition: background 0.25s ease;
+        }
         
