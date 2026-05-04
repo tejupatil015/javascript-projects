@@ -332,30 +332,29 @@ td {
     border-bottom: 1px solid rgba(148, 163, 184, 0.14);
 }
 
-        th {
-            text-align: left;
-            background: rgba(255,255,255,0.05);
-            color: var(--muted);
-            font-weight: 600;
-        }
+th {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--muted);
+    font-weight: 600;
+}
 
-      
-        
-  tr:last-child td {
-            border-bottom: none;
-        }
 
-        .action-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 14px;
-            border-radius: 14px;
-            border: 1px solid transparent;
-            background: rgba(59,130,246,0.18);
-            color: var(--text);
-            font-size: 0.92rem;
-            cursor: pointer;
-            transition: background 0.25s ease;
-        }
-        
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    background: rgba(59, 130, 246, 0.18);
+    color: var(--text);
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
