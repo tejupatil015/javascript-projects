@@ -50,7 +50,7 @@ project-folder/
 
 🚀 How to Run
 Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
+git clone :https://github.com/tejupatil015/javascript-projects
 
 🎯 Learning Outcomes
 DOM Manipulation
