@@ -56,9 +56,9 @@ const sliderImage = document.getElementById('sliderImage');
 const prevImage = document.getElementById('prevImage');
 const nextImage = document.getElementById('nextImage');
 const imageSources = [
-    'imges/WhatsApp Image 2026-03-25 at 10.09.02 PM (1).jpeg',
-    'imges/IMG_20250805_175453.jpg',
-    'imges/WhatsApp Image 2026-03-25 at 10.09.02 PM (1).jpeg'
+    'images/WhatsApp Image 2026-02-04 at 12.42.45 PM (1).jpeg',
+    'images/app 3.jpeg',
+    'images/WhatsApp Image 2026-02-04 at 12.42.45 PM (1).jpeg'
 ];
 let currentImageIndex = 0;
 function updateImage() {
