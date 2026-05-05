@@ -52,6 +52,8 @@ project-folder/
 Clone the repository
 git clone :https://github.com/tejupatil015/javascript-projects
 
+git demo: https://tejupatil015.github.io/javascript-projects/
+
 🎯 Learning Outcomes
 DOM Manipulation
 Event Handling
