@@ -65,6 +65,7 @@ Component-based thinking (mini apps in one page)
 
 <img width="1647" height="871" alt="Screenshot 2026-05-05 211940" src="https://github.com/user-attachments/assets/73d4374a-c9fd-4ee0-b265-ad0dbbe1d740" />
 
+
 <img width="1473" height="886" alt="Screenshot 2026-05-05 212003" src="https://github.com/user-attachments/assets/eb76aad9-835a-471e-92db-5086d7cc15e6" />
 
 🤝 Contributing
